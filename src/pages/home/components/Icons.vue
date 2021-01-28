@@ -50,10 +50,6 @@ export default {
         id: '008',
         imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
         imgDesc: '火车票'
-      }, {
-        id: '009',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        imgDesc: '火车票'
       }]
     }
   },
@@ -78,40 +74,43 @@ export default {
   // 引入varibles.sytl下的常量
   @import '~styles/varibles.styl'
   @import "~styles/mixins.styl"
+  // icons所处的 div 能够滑动
   .icons >>> .swiper-container
     height 0
     padding-bottom 50%
-  .icon
-    position relative
-    overflow hidden
-    float left
-    width 25%
-    height 0
-    padding-bottom 25%
-    .icon-img
-      // absolute 相当于根元素的 absolute，需要在icon中加上 position relative
-      position absolute
-      top 0
-      left 0
-      right 0
-      bottom .44rem
-      // 图片有一个5像素的间距 box-sizing border-box padding .1rem
-      box-sizing border-box
-      padding .1rem
-      .icon-imgContent
-        // 图片自动居中 display block margin 0 auto
-        display block
-        margin 0 auto
-        height 100%
-    .icon-desc
-      position absolute
-      left 0
-      right 0
-      bottom 0
-      height .44rem
-      line-height .44rem
-      text-align center
-      color $darkTextColor
-      // 实现字体显示不全用 ...代替的代码 overflow hidden white-space nowrap text-overflow ellipsis
-      ellipsis()
+  .icons
+    margin-top .1rem
+    .icon
+      position relative
+      overflow hidden
+      float left
+      width 25%
+      height 0
+      padding-bottom 25%
+      .icon-img
+        // absolute 相当于根元素的 absolute，需要在icon中加上 position relative
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom .44rem
+        // 图片有一个5像素的间距 box-sizing border-box padding .1rem
+        box-sizing border-box
+        padding .1rem
+        .icon-imgContent
+          // 图片自动居中 display block margin 0 auto
+          display block
+          margin 0 auto
+          height 100%
+      .icon-desc
+        position absolute
+        left 0
+        right 0
+        bottom 0
+        height .44rem
+        line-height .44rem
+        text-align center
+        color $darkTextColor
+        // 实现字体显示不全用 ...代替的代码 overflow hidden white-space nowrap text-overflow ellipsis
+        ellipsis()
 </style>
