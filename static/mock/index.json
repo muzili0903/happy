@@ -1,0 +1,85 @@
+{
+  "ret": true,
+  "data": {
+    "city": "北京",
+    "swiperList": [{
+        "id": "0001",
+        "imgUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=68285350,561487286&fm=26&gp=0.jpg"
+      },
+      {
+        "id": "0002",
+        "imgUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2353279619,1248476231&fm=26&gp=0.jpg"
+      },
+      {
+        "id": "0003",
+        "imgUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1434513799,1127957191&fm=15&gp=0.jpg"
+      }, {
+        "id": "0004",
+        "imgUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=348451614,537019431&fm=26&gp=0.jpg"
+      }],
+    "iconList": [{
+        "id": "001",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/hotel.png",
+        "imgDesc": "酒店"
+      }, {
+        "id": "002",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/flight.png",
+        "imgDesc": "机票"
+      }, {
+        "id": "003",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/hotel.png",
+        "imgDesc": "火车票"
+      }, {
+        "id": "004",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/flight.png",
+        "imgDesc": "度假"
+      }, {
+        "id": "005",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/hotel.png",
+        "imgDesc": "景点门票"
+      }, {
+        "id": "006",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/hotel.png",
+        "imgDesc": "酒店"
+      }, {
+        "id": "007",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/flight.png",
+        "imgDesc": "机票"
+      }, {
+        "id": "008",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/flight.png",
+        "imgDesc": "火车票"
+      }, {
+        "id": "009",
+        "imgUrl": "//s.qunarzz.com/homenode/images/touchheader/flight.png",
+        "imgDesc": "火车票"
+      }],
+    "recommendList": [{
+        "id": "0001",
+        "imgUrl": "https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg",
+        "title": "大连圣亚海洋世界",
+        "desc": "浪漫大连首战，浪漫的海洋主题乐园"
+      }, {
+        "id": "0002",
+        "imgUrl": "https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg",
+        "title": "大连圣亚海洋世界",
+        "desc": "浪漫大连首战，浪漫的海洋主题乐园"
+      }, {
+        "id": "0003",
+        "imgUrl": "https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg",
+        "title": "大连圣亚海洋世界",
+        "desc": "浪漫大连首战，浪漫的海洋主题乐园"
+      }],
+    "weekendList": [{
+        "id": "0001",
+        "imgUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4161958695,1981548690&fm=15&gp=0.jpg",
+        "title": "大连圣亚海洋世界",
+        "desc": "浪漫大连首战，浪漫的海洋主题乐园"
+      }, {
+        "id": "0002",
+        "imgUrl": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.photophoto.cn%2Fnm-23%2F036%2F003%2F0360030791.jpg&refer=http%3A%2F%2Fimage.photophoto.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614432597&t=d8b0d37b63d4d81b0a1d4f5102ffb704",
+        "title": "大连圣亚海洋世界",
+        "desc": "浪漫大连首战，浪漫的海洋主题乐园"
+      }]
+  }
+}

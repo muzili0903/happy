@@ -16,48 +16,14 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data () {
-    return {
-      iconList: [{
-        id: '001',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        imgDesc: '酒店'
-      }, {
-        id: '002',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        imgDesc: '机票'
-      }, {
-        id: '003',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        imgDesc: '火车票'
-      }, {
-        id: '004',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        imgDesc: '度假'
-      }, {
-        id: '005',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        imgDesc: '景点门票'
-      }, {
-        id: '006',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        imgDesc: '酒店'
-      }, {
-        id: '007',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        imgDesc: '机票'
-      }, {
-        id: '008',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        imgDesc: '火车票'
-      }]
-    }
+  props: {
+    list: Array
   },
   // 计算属性用来实现分页效果
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
