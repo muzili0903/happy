@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOptions">
-      <swiper-slide v-for="item of swiperList" :key=item.id>
+    <!-- v-if="list.length" 为false swiper 不会被创建-->
+    <swiper :options="swiperOptions" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -12,21 +13,22 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    // 接收父组件传递过来的list
+    list: Array
+  },
   data () {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
         // 轮播可以循环轮播
         loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=68285350,561487286&fm=26&gp=0.jpg'
-      },
-      {
-        id: '0002',
-        imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2353279619,1248476231&fm=26&gp=0.jpg'
-      }]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }

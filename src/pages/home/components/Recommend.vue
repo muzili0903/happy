@@ -3,7 +3,7 @@
     <div class="recommend-title">热门推销</div>
     <ul>
       <!-- li 引入 1像素边框 border-bottom-->
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战，浪漫的海洋主题乐园'
-      }, {
-        id: '0002',
-        imgUrl: 'https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战，浪漫的海洋主题乐园'
-      }, {
-        id: '0003',
-        imgUrl: 'https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w=580/sign=9489188db3de9c82a665f9875c8080d2/fd039245d688d43f81456d467d1ed21b0ff43b91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战，浪漫的海洋主题乐园'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
