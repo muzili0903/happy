@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOptions">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -18,6 +18,14 @@ export default {
   name: 'HomeIcons',
   props: {
     list: Array
+  },
+  data () {
+    return {
+      swiperOptions: {
+        // 控制 轮播图不要自动滚动
+        autoplay: false
+      }
+    }
   },
   // 计算属性用来实现分页效果
   computed: {
