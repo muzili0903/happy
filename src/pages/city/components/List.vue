@@ -40,7 +40,6 @@ export default {
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wraaper)
-    console.log(this.scroll)
   },
   // 监听器
   watch: {
