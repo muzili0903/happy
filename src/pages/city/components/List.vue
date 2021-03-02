@@ -6,23 +6,25 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hot" :key="item.id">
+          <div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
       <div class="area" v-for="(item, key) of cities" :key="key"
-      :ref="key">
+           :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
+          <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id"
+               @click="handleCityClick(innerItem.name)">{{innerItem.name}}
+          </div>
         </div>
       </div>
     </div>
@@ -31,6 +33,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -38,8 +41,23 @@ export default {
     cities: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wraaper)
+  computed: {
+    ...mapState({
+      // 把 vuex 中的 city 映射到 computed 属性中，名字为 currentCity
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick (city) {
+      // 调用 vuex 中的 Actions 需要先调用 dispatch
+      // 非批量数据可以省略调用 actions 可以直接调用commit
+      // this.$store.dispatch('changeCity', city)
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    // 把 vuex 中 Mutations 的 changeCity 映射到这个组件中，名字叫做 changeCity
+    ...mapMutations(['changeCity'])
   },
   // 监听器
   watch: {
@@ -56,6 +74,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wraaper)
   }
 }
 </script>

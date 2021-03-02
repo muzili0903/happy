@@ -5,7 +5,9 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleCityClick(item.name)">
+          {{item.name}}
+        </li>
         <li class="search-item border-bottom" v-show="hasNoData">没有匹配到内容</li>
       </ul>
     </div>
@@ -14,6 +16,8 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'citySearch',
   props: {
@@ -25,6 +29,18 @@ export default {
       timer: null,
       list: []
     }
+  },
+  methods: {
+    handleCityClick (city) {
+      // 调用 vuex 中的 Actions 需要先调用 dispatch
+      // 非批量数据可以省略调用 actions 可以直接调用commit
+      // this.$store.dispatch('changeCity', city)
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      // 点击城市跳转到首页
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   watch: {
     keyword () {
@@ -40,7 +56,7 @@ export default {
         for (let i in this.cities) {
           this.cities[i].forEach((value) => {
             if (value.spell.indexOf(this.keyword) > -1 ||
-                value.name.indexOf(this.keyword) > -1) {
+              value.name.indexOf(this.keyword) > -1) {
               result.push(value)
             }
           })
@@ -81,6 +97,7 @@ export default {
       text-align center
       border-radius .06rem
       color #666
+
   .search-content
     // z-index 页面全部显示
     z-index 1

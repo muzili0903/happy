@@ -8,9 +8,9 @@
       输入城市/景点/游玩主题
     </div>
     <!-- router-link 路由跳转 跳转到 /city 路径-->
-    <router-link to="city" @click.native="test">
+    <router-link to="city">
       <div class="header-right">
-        {{city}}
+        {{this.city}}
         <span class="iconfont arrow-icon">&#xe6aa;</span>
       </div>
     </router-link>
@@ -18,24 +18,25 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
-  },
-  methods: {
-    test: function () {
-      console.log(1111)
-    }
+  computed: {
+    // ... 展开运算符
+    // mapState 把 vuex 中的 city 映射到 computed 中
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
   }
 }
 </script>
 
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
+  @import "~styles/mixins.styl"
   .header
     display flex
-    line-height : $headerHeight
+    line-height: $headerHeight
     background: $bgColor
     color: #fff
     .header-left
@@ -45,13 +46,16 @@ export default {
         text-align: center
         font-size: .4rem
     .header-right
-      width: 1.24rem
+      // 如果写成 width 1.04 宽度就写死了
+      // 写成 min-width 根据内容展示宽度，最少宽度 1.04
+      min-width 1.04rem
+      padding 0 .1rem
       float: right
       text-align: center
       color #ffffff
       .arrow-icon
         font-size: .24rem
-        margin-left: -0.1rem
+        margin-left: -.04rem
     .header-input
       flex: 1
       background: #fff
