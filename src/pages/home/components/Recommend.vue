@@ -3,14 +3,17 @@
     <div class="recommend-title">热门推销</div>
     <ul>
       <!-- li 引入 1像素边框 border-bottom-->
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="li"
+                   class="item border-bottom"
+                   v-for="item of list" :key="item.id"
+                   :to="'/detail/' + item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -31,6 +34,7 @@ export default {
     line-height .8rem
     background #eee
     text-indent .2rem
+
   .item
     overflow hidden
     display flex
