@@ -35,10 +35,15 @@ export default {
       }
     }
   },
-  // 因为用来keepalive 所以页面只要被展示，activated 就会被执行
+  // 因为用了keepalive 所以页面只要被展示，activated 就会被执行
   activated () {
     // 监听 scroll 事件
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 因为用了 keepalive 所以页面只要被关闭，deactivated 就会被执行
+  deactivated () {
+    // 全局事件需要解绑，避免出现 bug
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
