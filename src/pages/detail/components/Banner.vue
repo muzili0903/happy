@@ -1,26 +1,32 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img"
-           src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1811634529,3761429909&fm=26&gp=0.jpg"/>
+      <img class="banner-img" :src="bannerImg"/>
       <div class="banner-info">
-        <div class="banner-title">大连圣亚海洋世界</div>
-        <div class="banner-num"><span class="iconfont banner-icon">&#xe629;</span>39</div>
+        <div class="banner-title">{{this.sightName}}</div>
+        <div class="banner-num"><span class="iconfont banner-icon">&#xe629;</span>{{this.bannerImgs.length}}</div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <fade-animation>
+      <common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1811634529,3761429909&fm=26&gp=0.jpg', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4222371603,1171315183&fm=26&gp=0.jpg']
+      showGallary: false
     }
   },
   methods: {
@@ -32,7 +38,8 @@ export default {
     }
   },
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   }
 }
 </script>
